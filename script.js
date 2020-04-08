@@ -11,6 +11,7 @@ let startButton = document.getElementById('start');
 let currentlyPlaying = true;
 let currentCounter = document.getElementById('currentStreakCounter');
 let currentStreak = 0;
+let bestCounter = document.getElementById('bestStreakCounter');
 
 
 const isBot = (door) => {
@@ -37,7 +38,6 @@ const playDoor = (door) => {
     } else if (isBot(door)) {
         gameOver()
         streakCounter('reset')
-
     }
 };
 
@@ -56,10 +56,8 @@ let choreDoor = Math.floor(Math.random() * numClosedDoors)
         openDoor1 = botDoorPath;
         openDoor2 = beachDoorPath;
         openDoor3 = spaceDoorPath;
-    }
-        
+    }   
 };
-
 
 doorImage1.onclick = () => {
     if(currentlyPlaying && !isClicked(doorImage1)) {
@@ -90,18 +88,18 @@ const startRound = () => {
     startButton.innerHTML = 'Good luck!'
     currentlyPlaying = true;
     randomChoreDoorGenerator();
-
+    
 };
 
 startButton.onclick = () => {
     if (!currentlyPlaying) {
-    startRound();
+    startRound()
     }
 };
 
 const gameOver = (status) => {
     if (status === 'win') {
-        startButton.innerHTML = 'You win! Play again?';
+        startButton.innerHTML = 'You win! Play again?'
     } else {
         startButton.innerHTML = 'Game over! Play again?'
     }
@@ -111,11 +109,18 @@ const gameOver = (status) => {
 const streakCounter = (count) => {
     if (count === 'increment'){
         currentCounter.innerHTML ++
+        newRecord();
     } else if (count === 'reset') {
         currentCounter.innerHTML = 0
+        newRecord();
     }
 };
 
+const newRecord = () => {
+    if (currentCounter.innerHTML > bestCounter.innerHTML) {
+        return bestCounter.innerHTML = currentCounter.innerHTML
+    }
+};
 
 startRound();
 
