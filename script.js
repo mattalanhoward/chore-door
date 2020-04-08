@@ -9,6 +9,9 @@ const beachDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chor
 const spaceDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg';
 let startButton = document.getElementById('start');
 let currentlyPlaying = true;
+let currentCounter = document.getElementById('currentStreakCounter');
+let currentStreak = 0;
+
 
 const isBot = (door) => {
     if (door.src === botDoorPath) {
@@ -29,9 +32,12 @@ const isClicked = (door) => {
 const playDoor = (door) => {
     numClosedDoors--;
     if (numClosedDoors === 0) {
-        gameOver('win');
+        gameOver('win')
+        streakCounter('increment')
     } else if (isBot(door)) {
-        return gameOver();
+        gameOver()
+        streakCounter('reset')
+
     }
 };
 
@@ -43,13 +49,13 @@ let choreDoor = Math.floor(Math.random() * numClosedDoors)
         openDoor2 = beachDoorPath;
         openDoor3 = spaceDoorPath;
     } else if (choreDoor === 1) {
-        openDoor2 = botDoorPath;
-        openDoor1 = beachDoorPath;
+        openDoor1 = botDoorPath;
+        openDoor2 = beachDoorPath;
         openDoor3 = spaceDoorPath;
     } else {
-        openDoor3 = botDoorPath;
+        openDoor1 = botDoorPath;
         openDoor2 = beachDoorPath;
-        openDoor1 = spaceDoorPath;
+        openDoor3 = spaceDoorPath;
     }
         
 };
@@ -84,6 +90,7 @@ const startRound = () => {
     startButton.innerHTML = 'Good luck!'
     currentlyPlaying = true;
     randomChoreDoorGenerator();
+
 };
 
 startButton.onclick = () => {
@@ -98,8 +105,17 @@ const gameOver = (status) => {
     } else {
         startButton.innerHTML = 'Game over! Play again?'
     }
-    currentlyPlaying = false;
+    currentlyPlaying = false;  
 };
+
+const streakCounter = (count) => {
+    if (count === 'increment'){
+        currentCounter.innerHTML ++
+    } else if (count === 'reset') {
+        currentCounter.innerHTML = 0
+    }
+};
+
 
 startRound();
 
