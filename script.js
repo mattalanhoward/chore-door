@@ -49,13 +49,13 @@ let choreDoor = Math.floor(Math.random() * numClosedDoors)
         openDoor2 = beachDoorPath;
         openDoor3 = spaceDoorPath;
     } else if (choreDoor === 1) {
-        openDoor1 = botDoorPath;
-        openDoor2 = beachDoorPath;
+        openDoor2 = botDoorPath;
+        openDoor1 = beachDoorPath;
         openDoor3 = spaceDoorPath;
     } else {
-        openDoor1 = botDoorPath;
+        openDoor3 = botDoorPath;
         openDoor2 = beachDoorPath;
-        openDoor3 = spaceDoorPath;
+        openDoor1 = spaceDoorPath;
     }   
 };
 

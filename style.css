@@ -1,7 +1,6 @@
 body {
     background-color: #010165;
     margin: 0px;
-    border: 3px solid black;
   }
 
 .header {
@@ -10,9 +9,8 @@ body {
 }
 
 .title-row {
-  border: 3px solid purple;
-  margin-top: 42px;
-  margin-bottom: 21px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
 
 }
@@ -48,7 +46,6 @@ body {
 }
 
 .door-frame {
-  border: 3px solid orange;
   cursor: pointer;
   padding: 10px;
 }
@@ -63,32 +60,30 @@ body {
   font-size: 18px;
   text-align: center;
   color: #010165;
-  margin-bottom: 21px;
+  margin-bottom: 4px;
   cursor: pointer;
 }
 
 .streak {
-  border: 3px solid green;
   text-align: center;
   margin: 0 auto;
   width: 300px;
   padding: 10px;
+  border-collapse: separate;
+  border-spacing: 20px 5px;
 }
 
 .streakHeader {
-  border: 3px solid red;
   font-family: 'Work Sans';
   font-size: 14px;
   color: #ffffff;
 }
 
 .streakCounters {
-  border: 3px solid yellow;
   color: #010165;
   background-color: #00ffff;
   width: 150px;
   height: 50px;
   font-size: 36px;
   font-family: 'Work Sans';
-
 }
