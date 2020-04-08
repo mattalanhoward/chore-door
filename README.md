@@ -1,8 +1,4 @@
 Chore Door
-Your mission is to construct a single-page website that plays a fully-functional game. You will see how HTML, CSS, and JavaScript interact harmoniously to produce a dynamic website.
-
-Believe it or not, you have the capabilities of building every feature in this game - from the layout to the logic. Be patient, take creative risks, and most importantly, have fun!
-
 
 Mark the tasks as complete by checking them off Getting Started - Get a Door, Open a Door!
 
@@ -10,9 +6,8 @@ You’ll build out functionality one step at a time in index.html, style.css, an
 
 Now your first objective is to build one door which will hide the dreaded ChoreBot.
 
-Look at the index.html starting code. Inside the <body>, create a <div> parent element with the class name "door-row". Next, create an  child element inside this
+Look at the index.html starting code. Inside the <body>, create a <div> parent element with the class name "door-row". Next, create an  child element inside this.
 
-.
 Copy and paste this link in the image element’s src:
 
 https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg
@@ -51,9 +46,8 @@ Refresh the page. Now when you click on the door, watch as the closed door image
 
 What's in store? More doors!
 
-You’ve completed your first objective of getting a door and opening a door. Now you’re going to add two more closed doors in the same parent
+You’ve completed your first objective of getting a door and opening a door. Now you’re going to add two more closed doors in the same parent as your first door.
 
-as your first door.
 Under your original <img> element, create two new <img> elements and assign them the same src as your original <img> element. Their id values, however, will be assigned door2 and door3 respectively. Make sure to place the id before the src.
 
 Being a good programmer means doing your best to stay DRY(“Don’t repeat yourself”). Looking at the style.css code, it would be repetitive to create CSS ID selectors for #door2 and #door3 just to give them the same cursor property.
@@ -62,9 +56,7 @@ Navigate back to the index.html and assign each image a new class of door-frame.
 
 Listing the id and class in this order is an important reminder of CSS specificity (the order by which the browser decides which CSS styles will be displayed).
 
-Next, in the style.css file, create the .door-frame CSS class selector and assign the following properties and values:
-
-cursor - pointer padding - 10px Refresh the page after each new CSS property is assigned so you can see how each individual value influences the three doors.
+Next, in the style.css file, create the .door-frame CSS class selector and assign the following properties and values: cursor - pointer padding - 10px Refresh the page after each new CSS property is assigned so you can see how each individual value influences the three doors.
 
 Delete the #door1 ID selector since the .door-frame class selector makes #door1 redundant.
 
@@ -77,11 +69,10 @@ Under your doorImage1.onclick() arrow function, give doorImage2 and doorImage3 e
 Be mindful to change the logic if you decide to copy and paste the logic from the doorImage1.onclick() function - or else you’ll have three ChoreBots!
 
 To prevent this from happening, first create a global variable called beachDoorPath and assign this URL string as its value:
-
 https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/beach.svg
 
-Next, create another global variable called spaceDoorPath and assign this URL string as its value:
 
+Next, create another global variable called spaceDoorPath and assign this URL string as its value:
 https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg
 
 Now within the empty .onclick() functions of doorImage2 and doorImage3, write code so that doorImage2 will change to the beach image and doorImage3 will change to the space image when clicked.
@@ -93,7 +84,6 @@ Let's Make This LOOK Like a Game!
 You have three doors but they’re all huddled in the top left corner. Give your website some flavor and symmetry by expanding your index.html and style.css pages.
 
 Right after the opening tag, create a new <div> element with the class name "header". Inside this new <div> parent element, create an  child element for the logo image. Copy this url and paste into the src:
-
 https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/logo.svg
 
 Be aware that the logo is the same color as your current background so don’t panic if you can’t see the image - this is where the CSS gets its chance to contribute!
@@ -103,7 +93,6 @@ In the style.css file, under the body selector but above the door-frame selector
 Good work - you have your game title. Now it’s time to write the instructions to your game. First, let’s create a title for these instructions and flank this title with a pretty star on each side.
 
 Beneath the <div class="header"> element but above the <div class="door-row"> element, create a new <div> element with the class name "title-row". Inside this element, create two images using this URL:
-
 https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/star.svg
 
 Refresh your page and you should see two small stars huddled in the top-left corner of their <div> underneath the logo image.
@@ -131,16 +120,17 @@ In the index.html file, beneath the <div class="title-row"> element, create a ne
 Open the hint for the correct table syntax.
 
 Nested inside each <tr> parent element should be two <td> child elements:
-
 The first <td> of each child pair has the class name "instructions-number".
-
 The second <td> of each child pair has the class name "instructions-text".
 
 In between each <td></td> element with the instructions-number class, add the numbers 1 through 4 so that these four <td></td>elements are numbered sequentially.
 
 Going down each <td> element with the "instructions-text" class sequentially, copy and paste the four directions to the game in order:
 
-Hiding behind one of these doors is the ChoreBot. Your mission is to open all of the doors without running into the ChoreBot. If you manage to avoid the ChoreBot until you open the very last door, you win! See if you can score a winning streak!
+1.  Hiding behind one of these doors is the ChoreBot. 
+2.  Your mission is to open all of the doors without running into the ChoreBot. 
+3.  If you manage to avoid the ChoreBot until you open the very last door, you win! 
+4.  See if you can score a winning streak!
 
 Save your code and refresh your page to ensure that your game has four directions listed.
 
@@ -183,7 +173,6 @@ Instead of having the ChoreBot always hide behind the first door, let’s begin 
 In the randomChoreDoorGenerator() function, create a choreDoor variable and set its value to a Math method that will randomly generate a whole number between 0 and 2.
 
 To do this, this Math function will utilize:
-
 The Math.random() function to generate a decimal between 0 and 1. The numClosedDoors variable as a multiplier with the Math.random() function to generate a decimal value between 0 and 2. The Math.floor() function to round down this decimal value to the closest whole number. Open the hint ot see the full syntax for generating the choreDoor value.
 
 Now that your randomChoreDoorGenerator() randomly generates one of three possible values (0, 1, or 2), it’s time to write the logic that assigns each of these possible values to a different door where the ChoreBot could hide.
@@ -205,7 +194,6 @@ To see if the randomChoreDoorGenerator() is working, you should call it! Write t
 With each refresh of the page, check to see if the ChoreBot appears in a different door. While the gaming logic isn’t fully there yet, you’ve made significant progress towards creating a dynamic webpage that responds to user interactions.
 
 Let's Make This ACT Like a Game! - Part II (Building a Winner) 46. You’ll need to create a function called playDoor() that serves two important roles:
-
 It decreases the numClosedDoors variable. This is because each time you click a door, the number of available doors to click goes down by one. It checks if the game-winning condition (numClosedDoors === 0) has been met and if so, calls a gameOver() function (which you will write later). In the script.js file, right below your list of global variables, create a new empty function called playDoor().
 
 Within this playDoor() function, write code to decrease the numClosedDoors variable every time its called.
@@ -221,7 +209,6 @@ You need logic to make each door clickable only once. Above your playDoor() func
 An important global variable storing the source path of the closed door image must be created at this point. It will be very useful for your isClicked() function as well as other JavaScript functions in this game.
 
 Create another global variable called closedDoorPath and assign this URL string as its value:
-
 https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg 52. The isClicked() function will return a boolean value. You’ll call isClicked() with a door argument and use that door element to make the determination.
 
 Write an if/else statement where the condition checks if the door‘s src is equivalent to the closedDoorPath.
@@ -271,7 +258,6 @@ If this isBot() function equates to true, call the gameOver() function with no a
 Since the playDoor() function now needs an argument, look at the door element .onclick() functions. Pass doorImage1, doorImage2, and doorImage3, respectively, as the arguments for the playDoor() function within each .onclick() function.
 
 For instance, from within the first door’s .onclick(), you’d call:
-
 playDoor(doorImage1); 62. Now reexamine the gameOver() function. Beneath the current logic, write an else statement that will change the .innerHTML of the startButton variable to Game over! Play again?.
 
 Refresh the page and notice how the text changes to ‘Game Over! Play again?’ if you find the ChoreBot behind the first door or second door that you open.
@@ -293,11 +279,9 @@ There’s one problem though - the only way to reset the values for a new round 
 Directly underneath the door element .onclick() functions, add a click handler function for the startButton element. Inside it, call the startRound() function (which hasn’t been written yet).
 
 To call a function from inside a click handler:
-
 element.onclick = () => { functionToCall(); } 67. The startRound() function not only has to start a new game; it also has to reset the values from the previous game.
 
 Create this new startRound() function after the .onclick() functions. startRound() should reset the following variables back to their original values:
-
 All doorImage.src values numClosedDoors variable startButton.innerHTML variable currentlyPlaying variable Examine the starting code, or open the hint for tips or resetting these orignally values.
 
 The numClosedDoors variable is set to 3, each doorImage.src variable is set to the closedDoorPath variable, the startButton.innerHTML is set to 'Good luck!', and the currentlyPlaying variable is set to true.
@@ -310,4 +294,3 @@ Currently, the game can reset mid-round if the player clicks on the startRound b
 
 Wrap the code inside the startButton.onclick() function in an if statement where the condition checks if the currentlyPlaying variable is false so that a player cannot reset the game mid-round.
 
-Congratulations! You’ve successfully built a full interactive game utilizing your HTML, CSS, and JavaScript knowledge. Be proud of how far you’ve come.
